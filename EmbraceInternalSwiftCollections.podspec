@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
     spec.name = "EmbraceInternalSwiftCollections"
-    spec.version = "1.1.3"
+    spec.version = "1.1.3-internal"
     spec.summary = "Internal fork for Embrace SDKs to support Swift Collections."
     spec.homepage = "https://github.com/embrace-io/swift-collections"
     spec.author = "Embrace.io"
@@ -8,7 +8,7 @@ Pod::Spec.new do |spec|
     spec.ios.deployment_target = '13.0'
     spec.swift_version = '5.8'
   
-    spec.source = { :git => "https://github.com/embrace-io/swift-collections.git", :tag => "1.1.3" }
+    spec.source = { :git => "https://github.com/embrace-io/swift-collections.git", :tag => spec.version }
 
     spec.subspec 'InternalCollectionsUtilities' do |icu|
         icu.source_files = 'Sources/InternalCollectionsUtilities/**/*.swift'
@@ -38,10 +38,6 @@ Pod::Spec.new do |spec|
         rm.source_files = 'Sources/RopeModule/**/*.swift'
         rm.dependency 'InternalCollectionsUtilities'
     end
-
-    # spec.subspec 'SortedCollections' do |sc|
-    #     sc.source_files = 'Sources/SortedCollections/**/*.swift'
-    # end
 
     # commenting subspec out since it's having building issues but it's not relevant right now
     # spec.subspec 'OrderedCollections' do |oc|
